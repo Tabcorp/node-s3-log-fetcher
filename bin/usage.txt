@@ -1,0 +1,17 @@
+Usage: s3-log-fetcher [options]
+
+Options:
+  -h, --help      Output usage information
+  -v, --version   Output version number
+  -f, --from      Start date (required)
+  -u, --until     End date (required)
+  -k, --key       S3 access key, defaults to env.S3_ACCESS_KEY (required)
+  -s, --secret    S3 secret key, defaults to env.S3_SECRET_KEY (required)
+  -b, --bucket    S3 bucket name (required)
+
+Examples:
+  $ s3-log-fetcher -f 2015-10-03 \
+    -u 2015-10-03 -b testbucket  # Fetch logs from S3 for 2015-10-03
+
+Docs: https://github.com/TabDigital/node-s3-log-fetcher
+Bugs: https://github.com/TabDigital/node-s3-log-fetcher/issues
