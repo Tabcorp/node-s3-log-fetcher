@@ -10,6 +10,8 @@ __Features:__
 - incredibly fast
 - uses {node,unix} streams
 - incredibly fast
+- automatic header based gunzip through
+  [gunzip-maybe](https://github.com/mafintosh/gunzip-maybe)
 
 ## Installation
 ```sh
