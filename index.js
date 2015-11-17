@@ -1,7 +1,9 @@
 const parallel = require('parallel-multistream')
 const dateRange = require('date-range-array')
 const stream = require('readable-stream')
+const gunzip = require('gunzip-maybe')
 const S3Lister = require('s3-lister')
+const pumpify = require('pumpify')
 const assert = require('assert')
 const split = require('split2')
 const eol = require('os').EOL
@@ -74,7 +76,7 @@ LogFetcher.prototype._forward = function () {
       if (err) return self.emit('error', err)
       if (self.ended) return
 
-      files.push(fileStream)
+      files.push(pumpify(fileStream, gunzip()))
 
       const ended = rs.ended
       if (ended && (files.length === counter)) streamFiles()
