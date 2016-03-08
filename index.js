@@ -52,13 +52,14 @@ LogFetcher.prototype.destroy = function (err) {
 }
 
 // start the reader
-// null -> rstream
+// null -> null
 LogFetcher.prototype._read = function () {
   this._drained = true
   this._forward()
 }
 
 // start forwarding data from S3
+// null -> null
 LogFetcher.prototype._forward = function () {
   if (this._forwarding || !this._drained) return
   this._forwarding = true

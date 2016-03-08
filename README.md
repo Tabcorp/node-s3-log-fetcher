@@ -75,7 +75,7 @@ date, this package don't care. For example:
 ```
 
 ## API
-### readStream = logFetcher.createReadStream(opts)
+### readStream = logFetcher(opts)
 Create a readable stream for a start and end date. Takes the following opts:
 - __from (required):__ Start date.
 - __until (required):__ End date.
